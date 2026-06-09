@@ -95,6 +95,8 @@ SELECT OrderDetailID AS 'Numero detalhado da ordem',
        Quantity AS 'Quantidade'
 FROM OrderDetails
 WHERE Quantity < 10
+AND OrderID > 50
+ORDER BY ProductID ASC;
 
 Exercicio27
 SELECT OrderDetailID AS 'Numero detalhado da ordem',
