@@ -1,0 +1,177 @@
+Exercicio17 
+SELECT ProductID AS 'Produtos',
+        Quantity AS 'Quantidade',
+		OrderID AS 'Ordem',
+         OrderDetailID AS 'Ordem Detalhada'
+FROM OrderDetails
+WHERE OrderID >500
+AND ProductID %3=0
+ORDER BY Quantity ASC;
+
+Exercicio18
+SELECT OrderDetailID AS 'Numero detalhado da ordem',
+       OrderID AS 'Numero da Ordem',
+       ProductID AS 'Produto',
+       Quantity AS 'Quantidade'
+FROM OrderDetails
+WHERE OrderDetailID BETWEEN 100 AND 200
+AND Quantity < 15
+ORDER BY ProductID ASC;
+
+Exercicio19
+SELECT OrderDetailID AS 'Numero detalhado da ordem',
+       OrderID AS 'Numero da Ordem',
+       ProductID AS 'Produto',
+       Quantity AS 'Quantidade'
+FROM OrderDetails
+WHERE ProductID > 10
+AND OrderID < 50
+ORDER BY Quantity ASC;
+
+Exercicio20
+SELECT OrderDetailID AS 'Numero detalhado da ordem',
+       OrderID AS 'Numero da Ordem',
+       ProductID AS 'Produto',
+       Quantity AS 'Quantidade'
+FROM OrderDetails
+WHERE OrderDetailID < 10
+AND Quantity % 2 = 0
+ORDER BY OrderID ASC;
+
+Exercicio21
+SELECT OrderDetailID AS 'Numero detalhado da ordem',
+       OrderID AS 'Numero da Ordem',
+       ProductID AS 'Produto',
+       Quantity AS 'Quantidade'
+FROM OrderDetails
+WHERE OrderID BETWEEN 300 AND 400
+AND ProductID < 20
+ORDER BY Quantity ASC;
+
+Exercicio22
+SELECT OrderDetailID AS 'Numero detalhado da ordem',
+       OrderID AS 'Numero da Ordem',
+       ProductID AS 'Produto',
+       Quantity AS 'Quantidade'
+FROM OrderDetails
+WHERE Quantity > 30
+AND OrderDetailID LIKE '%8'
+ORDER BY OrderID ASC;
+
+Exercicio23
+SELECT OrderDetailID AS 'Numero detalhado da ordem',
+       OrderID AS 'Numero da Ordem',
+       ProductID AS 'Produto',
+       Quantity AS 'Quantidade'
+FROM OrderDetails
+WHERE OrderID % 6 = 0
+AND Quantity BETWEEN 15 AND 35
+ORDER BY ProductID ASC;
+
+Exercicio24
+SELECT OrderDetailID AS 'Numero detalhado da ordem',
+       OrderID AS 'Numero da Ordem',
+       ProductID AS 'Produto',
+       Quantity AS 'Quantidade'
+FROM OrderDetails
+WHERE ProductID > 25
+AND OrderDetailID % 3 = 0
+ORDER BY Quantity ASC;
+
+Exercicio25
+SELECT OrderDetailID AS 'Numero detalhado da ordem',
+       OrderID AS 'Numero da Ordem',
+       ProductID AS 'Produto',
+       Quantity AS 'Quantidade'
+FROM OrderDetails
+WHERE OrderDetailID > 400
+AND OrderID % 5 = 0
+ORDER BY ProductID ASC;
+
+Exercicio26
+SELECT OrderDetailID AS 'Numero detalhado da ordem',
+       OrderID AS 'Numero da Ordem',
+       ProductID AS 'Produto',
+       Quantity AS 'Quantidade'
+FROM OrderDetails
+WHERE Quantity < 10
+
+Exercicio27
+SELECT OrderDetailID AS 'Numero detalhado da ordem',
+       OrderID AS 'Numero da Ordem',
+       ProductID AS 'Produto',
+       Quantity AS 'Quantidade'
+FROM OrderDetails
+WHERE ProductID BETWEEN 5 AND 20
+AND OrderID LIKE '%7'
+ORDER BY OrderDetailID ASC;
+
+Exercicio28
+SELECT OrderDetailID AS 'Numero detalhado da ordem',
+       OrderID AS 'Numero da Ordem',
+       ProductID AS 'Produto',
+       Quantity AS 'Quantidade'
+FROM OrderDetails
+WHERE OrderID < 200
+AND Quantity > 25
+ORDER BY ProductID ASC;
+
+Exercicio29
+SELECT OrderDetailID AS 'Numero detalhado da ordem',
+       OrderID AS 'Numero da Ordem',
+       ProductID AS 'Produto',
+       Quantity AS 'Quantidade'
+FROM OrderDetails
+WHERE ProductID % 9 = 0
+AND Quantity BETWEEN 10 AND 20
+ORDER BY OrderID ASC;
+
+Exercicio30
+SELECT OrderDetailID AS 'Numero detalhado da ordem',
+       OrderID AS 'Numero da Ordem',
+       ProductID AS 'Produto',
+       Quantity AS 'Quantidade'
+FROM OrderDetails
+WHERE Quantity > 50
+AND ProductID < 30
+ORDER BY OrderDetailID ASC;
+
+Exercicio31
+SELECT OrderDetailID AS 'Numero detalhado da ordem',
+       OrderID AS 'Numero da Ordem',
+       ProductID AS 'Produto',
+       Quantity AS 'Quantidade'
+FROM OrderDetails
+WHERE OrderDetailID % 4 = 0
+AND OrderID < 300
+ORDER BY Quantity ASC;
+
+Exercicio32
+SELECT OrderDetailID AS 'Numero detalhado da ordem',
+       OrderID AS 'Numero da Ordem',
+       ProductID AS 'Produto',
+       Quantity AS 'Quantidade'
+FROM OrderDetails
+WHERE Quantity < 5
+AND OrderID BETWEEN 10 AND 100
+ORDER BY ProductID ASC;
+
+exercicio33
+SELECT OrderDetailID AS 'Numero detalhado da ordem',
+       OrderID AS 'Numero da Ordem',
+       ProductID AS 'Produto',
+       Quantity AS 'Quantidade'
+FROM OrderDetails
+WHERE OrderID LIKE '%2'
+AND ProductID > 15
+ORDER BY Quantity ASC;
+
+Exercicio34
+SELECT OrderDetailID AS 'Numero detalhado da ordem',
+       OrderID AS 'Numero da Ordem',
+       ProductID AS 'Produto',
+       Quantity AS 'Quantidade'
+FROM OrderDetails
+WHERE Quantity < 12
+AND OrderDetailID > 150
+ORDER BY OrderID ASC;
