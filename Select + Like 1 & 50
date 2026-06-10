@@ -1,0 +1,545 @@
+(Philipp) 
+Exercicio 1 
+SELECT  CustomerName AS 'Nome'
+FROM Customers
+WHERE CustomerName LIKE 'a%'
+ORDER BY  CustomerName ASC;
+
+Exercicio 2 
+SELECT  CustomerName AS 'Nome',
+City AS 'Cidade' 
+FROM Customers
+WHERE CITY LIKE '%a'
+ORDER BY  CustomerName,City ASC;
+
+exercicio 3 
+SELECT Country AS 'Pais',PostalCode AS 'Codigo Postal'
+FROM Customers
+WHERE Country LIKE 'FRANCE'
+ORDER BY  PostalCode ASC;
+
+exercicio 4
+SELECT Country AS 'Pais',
+PostalCode AS 'Codigo Postal',
+CustomerName AS 'Nome',
+City AS 'Cidade'
+FROM Customers
+WHERE Country LIKE 'D%'
+AND City LIKE 'A%'
+ORDER BY Country,City ASC;
+
+Exercicio 5 
+SELECT PostalCode AS 'Codigo Postal',
+CustomerName AS 'Nome',
+City AS 'Cidade'
+FROM Customers
+WHERE City LIKE 'Berlin'
+ORDER BY CustomerName ASC;
+
+Exercicio 6 
+SELECT Country AS 'Pais',
+PostalCode AS 'Codigo Postal',
+CustomerName AS 'Nome',
+City AS 'Cidade'
+FROM Customers
+WHERE Country LIKE 'USA'
+ORDER BY City DESC;
+
+Exercicio 7 
+SELECT Country AS 'Pais',
+PostalCode AS 'Codigo Postal',
+CustomerName AS 'Nome',
+ContactName AS 'Nome do contato',
+City AS 'Cidade',
+CustomerID AS 'Identidade do cliente' 
+FROM Customers
+WHERE ContactName  LIKE 'a%'
+ORDER BY CustomerID ASC;
+
+Exercicio 8 
+SELECT Country AS 'Pais',
+PostalCode AS 'Codigo Postal',
+CustomerName AS 'Nome',
+ContactName AS 'Nome do contato',
+City AS 'Cidade',
+CustomerID AS 'Identidade do cliente' 
+FROM Customers
+WHERE Country NOT LIKE'CANADA'
+ORDER BY PostalCode ASC;
+
+Exercicio 9 
+SELECT Country AS 'Pais',
+PostalCode AS 'Codigo Postal',
+CustomerName AS 'Nome',
+ContactName AS 'Nome do contato',
+City AS 'Cidade',
+CustomerID AS 'Identidade do cliente' 
+FROM Customers
+WHERE CustomerName LIKE '%Shop%'
+ORDER BY Country ASC;
+
+Exercicio 10 
+SELECT Country AS 'Pais',
+PostalCode AS 'Codigo Postal',
+CustomerName AS 'Nome',
+ContactName AS 'Nome do contato',
+City AS 'Cidade',
+CustomerID AS 'Identidade do cliente' 
+FROM Customers
+WHERE Country LIKE 'Mexico'
+ORDER BY CustomerID ASC;
+
+Exercico 11 
+SELECT Country AS 'Pais',
+PostalCode AS 'Codigo Postal',
+CustomerName AS 'Nome',
+ContactName AS 'Nome do contato',
+City AS 'Cidade',
+CustomerID AS 'Identidade do cliente' 
+FROM Customers
+WHERE PostalCode LIKE '1%'
+ORDER BY CustomerName ASC;
+
+Exercicio 12 
+SELECT Country AS 'Pais',
+PostalCode AS 'Codigo Postal',
+CustomerName AS 'Nome',
+ContactName AS 'Nome do contato',
+City AS 'Cidade',
+CustomerID AS 'Identidade do cliente' 
+FROM Customers
+WHERE City LIKE 'Madrid'
+ORDER BY ContactName ASC;
+
+Exercicio 13 
+SELECT Country AS 'Pais',
+PostalCode AS 'Codigo Postal',
+CustomerName AS 'Nome',
+ContactName AS 'Nome do contato',
+City AS 'Cidade',
+CustomerID AS 'Identidade do cliente' 
+FROM Customers
+WHERE City LIKE 'p%'
+ORDER BY Country, CustomerID  ASC;
+
+Exercicio 14
+SELECT Country AS 'Pais',
+PostalCode AS 'Codigo Postal',
+CustomerName AS 'Nome',
+ContactName AS 'Nome do contato',
+City AS 'Cidade',
+CustomerID AS 'Identidade do cliente' 
+FROM Customers
+WHERE City LIKE 'New York'
+ORDER BY CustomerName ASC;
+
+exercicio 15
+SELECT Country AS 'Pais',
+PostalCode AS 'Codigo Postal',
+CustomerName AS 'Nome',
+ContactName AS 'Nome do contato',
+City AS 'Cidade',
+CustomerID AS 'Identidade do cliente' 
+FROM Customers
+WHERE Country LIKE '%a'
+ORDER BY City  ASC;
+
+Exercicio 16
+SELECT Country AS 'Pais',
+PostalCode AS 'Codigo Postal',
+CustomerName AS 'Nome',
+ContactName AS 'Nome do contato',
+City AS 'Cidade',
+CustomerID AS 'Identidade do cliente' 
+FROM Customers
+WHERE PostalCode LIKE '5%'
+ORDER BY ContactName DESC;
+
+Exercicio 17
+SELECT Country AS 'Pais',
+PostalCode AS 'Codigo Postal',
+CustomerName AS 'Nome',
+ContactName AS 'Nome do contato',
+City AS 'Cidade',
+CustomerID AS 'Identidade do cliente' 
+FROM Customers
+WHERE PostalCode LIKE '1%'
+ORDER BY PostalCode DESC;
+
+Exercicio 18 
+SELECT Country AS 'Pais',
+PostalCode AS 'Codigo Postal',
+CustomerName AS 'Nome',
+ContactName AS 'Nome do contato',
+City AS 'Cidade',
+CustomerID AS 'Identidade do cliente' 
+FROM Customers
+WHERE CustomerName  LIKE '%Ltd%'
+ORDER BY City, Country ASC;
+
+Exercicio 19 
+SELECT Country AS 'Pais',
+PostalCode AS 'Codigo Postal',
+CustomerName AS 'Nome',
+ContactName AS 'Nome do contato',
+City AS 'Cidade',
+CustomerID AS 'Identidade do cliente' 
+FROM Customers
+WHERE Country  LIKE 'Germany'
+ORDER BY CustomerName ASC;
+
+Exercicio 20 
+SELECT Country AS 'Pais',
+PostalCode AS 'Codigo Postal',
+CustomerName AS 'Nome',
+ContactName AS 'Nome do contato',
+City AS 'Cidade',
+CustomerID AS 'Identidade do cliente' 
+FROM Customers
+WHERE ContactName   LIKE '%Son%'
+ORDER BY PostalCode ASC;
+
+Exercicio 21 
+SELECT 
+ContactName AS 'Nome do contato',
+City AS 'Cidade'
+FROM Customers
+WHERE City LIKE 'Tokyo'
+ORDER BY ContactName DESC;
+
+Exercicio 22
+SELECT 
+PostalCode AS 'Codigo Postal',
+CustomerID AS 'Identidade do cliente' 
+FROM Customers
+WHERE PostalCode LIKE '%00'
+ORDER BY CustomerID ASC;
+
+Exercicio 23 
+SELECT Country AS 'Pais',
+PostalCode AS 'Codigo Postal',
+CustomerName AS 'Nome',
+ContactName AS 'Nome do contato',
+City AS 'Cidade',
+CustomerID AS 'Identidade do cliente' 
+FROM Customers
+WHERE City  LIKE 'Paris'
+ORDER BY Country ASC;
+
+Exercicio 24
+SELECT 
+CustomerName AS 'Nome',
+City AS 'Cidade',
+CustomerID AS 'Identidade do cliente' 
+FROM Customers
+WHERE City LIKE 's%'
+ORDER BY CustomerName ASC;
+
+Exercicio 25 
+SELECT Country AS 'Pais',
+PostalCode AS 'Codigo Postal',
+ContactName AS 'Nome do contato'
+FROM Customers
+WHERE ContactName LIKE 'j%'
+ORDER BY Country,PostalCode ASC;
+
+(Lucas Lopes)
+EX(26)
+SELECT customerid AS 'IDCliente',
+customername AS 'NomeCliente',
+contactname AS 'NomeDeContato',
+address AS 'Endereco',
+city AS 'Cidade',
+postalcode AS 'CodigoPostal',
+country AS 'Pais'
+FROM Customers
+WHERE city NOT LIKE 'London'
+ORDER BY CustomerId;
+
+EX(27)
+SELECT customerid AS 'IDCliente',
+customername AS 'NomeCliente',
+contactname AS 'NomeDeContato',
+address AS 'Endereco',
+city AS 'Cidade',
+postalcode AS 'CodigoPostal',
+country AS 'Pais'
+FROM Customers
+WHERE customername LIKE 'a%'
+ORDER BY ContactName ASC;
+
+EX(28)
+SELECT customerid AS 'IDCliente',
+customername AS 'NomeCliente',
+contactname AS 'NomeDeContato',
+address AS 'Endereco',
+city AS 'Cidade',
+postalcode AS 'CodigoPostal',
+country AS 'Pais'
+FROM Customers
+WHERE country LIKE 'Canada'
+ORDER BY PostalCode AND CustomerName;
+
+EX(29)
+SELECT customerid AS 'IDCliente',
+customername AS 'NomeCliente',
+contactname AS 'NomeDeContato',
+address AS 'Endereco',
+city AS 'Cidade',
+postalcode AS 'CodigoPostal',
+country AS 'Pais'
+FROM Customers
+WHERE CustomerName LIKE 'Global'
+ORDER BY Country;
+
+EX(30)
+SELECT customerid AS 'IDCliente',
+customername AS 'NomeCliente',
+contactname AS 'NomeDeContato',
+address AS 'Endereco',
+city AS 'Cidade',
+postalcode AS 'CodigoPostal',
+country AS 'Pais'
+FROM Customers
+WHERE Country LIKE 'I%'
+ORDER BY City;
+
+EX(31)
+SELECT customerid AS 'IDCliente',
+customername AS 'NomeCliente',
+contactname AS 'NomeDeContato',
+address AS 'Endereco',
+city AS 'Cidade',
+postalcode AS 'CodigoPostal',
+country AS 'Pais'
+FROM Customers
+WHERE Customername LIKE 'T%'
+ORDER BY contactname DESC;
+
+EX(32)
+SELECT customerid AS 'IDCliente',
+customername AS 'NomeCliente',
+contactname AS 'NomeDeContato',
+address AS 'Endereco',
+city AS 'Cidade',
+postalcode AS 'CodigoPostal',
+country AS 'Pais'
+FROM Customers
+WHERE City LIKE 'Chicago'
+ORDER BY Postalcode;
+
+EX(33)
+SELECT customerid AS 'IDCliente',
+customername AS 'NomeCliente',
+contactname AS 'NomeDeContato',
+address AS 'Endereco',
+city AS 'Cidade',
+postalcode AS 'CodigoPostal',
+country AS 'Pais'
+FROM Customers
+WHERE Country LIKE 'Italy'
+ORDER BY Customername AND Contactname;
+
+EX(34)
+SELECT customerid AS 'IDCliente',
+customername AS 'NomeCliente',
+contactname AS 'NomeDeContato',
+address AS 'Endereco',
+city AS 'Cidade',
+postalcode AS 'CodigoPostal',
+country AS 'Pais'
+FROM Customers
+WHERE customername LIKE 'B%'
+ORDER BY customerid ASC;
+
+EX(35)
+SELECT customerid AS 'IDCliente',
+customername AS 'NomeCliente',
+contactname AS 'NomeDeContato',
+address AS 'Endereco',
+city AS 'Cidade',
+postalcode AS 'CodigoPostal',
+country AS 'Pais'
+FROM Customers
+WHERE City LIKE '%o'
+ORDER BY country;
+
+EX(36)
+SELECT customerid AS 'IDCliente',
+customername AS 'NomeCliente',
+contactname AS 'NomeDeContato',
+address AS 'Endereco',
+city AS 'Cidade',
+postalcode AS 'CodigoPostal',
+country AS 'Pais'
+FROM Customers
+WHERE country LIKE 'Brazil'
+ORDER BY Postalcode AND customername;
+
+EX(37)
+SELECT customerid AS 'IDCliente',
+customername AS 'NomeCliente',
+contactname AS 'NomeDeContato',
+address AS 'Endereco',
+city AS 'Cidade',
+postalcode AS 'CodigoPostal',
+country AS 'Pais'
+FROM Customers
+WHERE Postalcode LIKE '9%'
+ORDER BY Customername DESC;
+
+EX(38)
+SELECT customerid AS 'IDCliente',
+customername AS 'NomeCliente',
+contactname AS 'NomeDeContato',
+address AS 'Endereco',
+city AS 'Cidade',
+postalcode AS 'CodigoPostal',
+country AS 'Pais'
+FROM Customers
+WHERE Customername LIKE '%Services%'
+ORDER BY Contactname;
+
+EX(39)
+SELECT customerid AS 'IDCliente',
+customername AS 'NomeCliente',
+contactname AS 'NomeDeContato',
+address AS 'Endereco',
+city AS 'Cidade',
+postalcode AS 'CodigoPostal',
+country AS 'Pais'
+FROM Customers
+WHERE Country LIKE  'Spain'
+ORDER BY city;
+
+EX(40)
+SELECT customerid AS 'IDCliente',
+customername AS 'NomeCliente',
+contactname AS 'NomeDeContato',
+address AS 'Endereco',
+city AS 'Cidade',
+postalcode AS 'CodigoPostal',
+country AS 'Pais'
+FROM Customers
+WHERE City LIKE 'A%'
+ORDER BY CustomerName AND country;
+
+EX(41)
+SELECT customerid AS 'IDCliente',
+customername AS 'NomeCliente',
+contactname AS 'NomeDeContato',
+address AS 'Endereco',
+city AS 'Cidade',
+postalcode AS 'CodigoPostal',
+country AS 'Pais'
+FROM Customers
+WHERE Contactname LIKE '%e'
+ORDER BY PostalCode;
+
+EX(42)
+SELECT customerid AS 'IDCliente',
+customername AS 'NomeCliente',
+contactname AS 'NomeDeContato',
+address AS 'Endereco',
+city AS 'Cidade',
+postalcode AS 'CodigoPostal',
+country AS 'Pais'
+FROM Customers
+WHERE Customername LIKE '%Group%'
+ORDER BY country ASC;
+
+EX(43)
+SELECT customerid AS 'IDCliente',
+customername AS 'NomeCliente',
+contactname AS 'NomeDeContato',
+address AS 'Endereco',
+city AS 'Cidade',
+postalcode AS 'CodigoPostal',
+country AS 'Pais'
+FROM Customers
+WHERE country LIKE '%n'
+ORDER BY Customername DESC;
+
+EX(44)
+SELECT customerid AS 'IDCliente',
+customername AS 'NomeCliente',
+contactname AS 'NomeDeContato',
+address AS 'Endereco',
+city AS 'Cidade',
+postalcode AS 'CodigoPostal',
+country AS 'Pais'
+FROM Customers
+WHERE city LIKE 'L%'
+ORDER BY customerid;
+
+EX(45)
+SELECT customerid AS 'IDCliente',
+customername AS 'NomeCliente',
+contactname AS 'NomeDeContato',
+address AS 'Endereco',
+city AS 'Cidade',
+postalcode AS 'CodigoPostal',
+country AS 'Pais'
+FROM Customers
+WHERE country LIKE 'Japan'
+ORDER BY PostalCode DESC;
+
+EX(46)
+SELECT customerid AS 'IDCliente',
+customername AS 'NomeCliente',
+contactname AS 'NomeDeContato',
+address AS 'Endereco',
+city AS 'Cidade',
+postalcode AS 'CodigoPostal',
+country AS 'Pais'
+FROM Customers
+WHERE postalcode LIKE '%5'
+ORDER BY customername AND city;
+
+EX(47)
+SELECT customerid AS 'IDCliente',
+customername AS 'NomeCliente',
+contactname AS 'NomeDeContato',
+address AS 'Endereco',
+city AS 'Cidade',
+postalcode AS 'CodigoPostal',
+country AS 'Pais'
+FROM Customers
+WHERE country LIKE 'Germany'
+ORDER BY city;
+
+EX(48)
+SELECT customerid AS 'IDCliente',
+customername AS 'NomeCliente',
+contactname AS 'NomeDeContato',
+address AS 'Endereco',
+city AS 'Cidade',
+postalcode AS 'CodigoPostal',
+country AS 'Pais'
+FROM Customers
+WHERE customername LIKE 'C%'
+ORDER BY Country AND contactname;
+
+EX(49)
+SELECT customerid AS 'IDCliente',
+customername AS 'NomeCliente',
+contactname AS 'NomeDeContato',
+address AS 'Endereco',
+city AS 'Cidade',
+postalcode AS 'CodigoPostal',
+country AS 'Pais'
+FROM Customers
+WHERE contactname LIKE '%King%'
+ORDER BY customerid;
+
+EX(50)
+SELECT customerid AS 'IDCliente',
+customername AS 'NomeCliente',
+contactname AS 'NomeDeContato',
+address AS 'Endereco',
+city AS 'Cidade',
+postalcode AS 'CodigoPostal',
+country AS 'Pais'
+FROM Customers
+WHERE postalcode LIKE '3%'
+ORDER BY Customername AND country;
