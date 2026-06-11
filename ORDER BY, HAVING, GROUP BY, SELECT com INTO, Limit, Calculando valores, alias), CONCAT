@@ -1,0 +1,41 @@
+Bloco 1: Aquecimento e Exploração (CONCAT, Cálculos e LIMIT)
+ teste 1 
+SELECT ProductID AS 'indentificaçao de produtos',
+ProductName AS 'Nome do produto',
+SupplierID	AS 'Identificador do Fornecedor',
+CategoryID	AS Categoria,
+Unit AS Unidades,
+Price AS Preço 
+
+Exercicio 1 
+SELECT CONCAT(ProductName, ' - ', Price * 2) AS 'Produto e Preço'
+FROM Products
+ORDER BY ProductName, Price
+LIMIT 10;
+
+Exercicio 2 
+SELECT CONCAT(ProductName ,' $', Price) AS'preco dos produtos'
+FROM Products
+ORDER BY Price ASC
+LIMIT 5;
+
+Exercicio 3 
+SELECT CONCAT(
+           'OrderDetailID: ', OrderDetailID,
+           ' - Valor Total: ', Quantity * 10
+       ) AS 'Ordem em detalhe'
+FROM OrderDetails
+LIMIT 15;
+
+Exercicio 4 
+SELECT CONCAT('Primeiro nome- ',FirstName,
+    ' | Sobrenome - ', LastName) AS'Funcionarios Senai' 
+FROM Employees
+ORDER BY FirstName ASC
+LIMIT 3;
+
+Exercicio 5 
+SELECT (Price *0.85) As 'Preco com 15% de desconto' 
+FROM Products
+ORDER BY Price DESC
+LIMIT 8;
