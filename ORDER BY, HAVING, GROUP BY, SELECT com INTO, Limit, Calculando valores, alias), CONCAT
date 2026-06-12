@@ -1,12 +1,4 @@
 Bloco 1: Aquecimento e Exploração (CONCAT, Cálculos e LIMIT)
- teste 1 
-SELECT ProductID AS 'indentificaçao de produtos',
-ProductName AS 'Nome do produto',
-SupplierID	AS 'Identificador do Fornecedor',
-CategoryID	AS Categoria,
-Unit AS Unidades,
-Price AS Preço 
-
 Exercicio 1 
 SELECT CONCAT(ProductName, ' - ', Price * 2) AS 'Produto e Preço'
 FROM Products
@@ -35,7 +27,177 @@ ORDER BY FirstName ASC
 LIMIT 3;
 
 Exercicio 5 
-SELECT (Price *0.85) As 'Preco com 15% de desconto' 
+SELECT ProductName AS 'Nome do Produto',
+       CONCAT('R$ ', ROUND(Price * 0.85, 2)) AS 'Preco com 15% de desconto'
 FROM Products
 ORDER BY Price DESC
 LIMIT 8;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Agrupamentos e Contagens (GROUP BY, COUNT e LIMIT)
+Exercicio 1
+SELECT City AS 'Cidade', 
+COUNT(CustomerID) AS "Numero de clientes"
+FROM Customers
+GROUP BY City 
+ORDER BY COUNT(CustomerID) DESC
+LIMIT 5;
+
+Exercicio 2
+SELECT CategoryID AS 'Identificacao de categoria',
+       COUNT(ProductName) AS 'Numero de produto' 
+FROM Products
+GROUP BY CategoryID
+ORDER BY CategoryID ASC
+LIMIT 3 ;
+
+Exercicio 3 
+SELECT EmployeeID AS 'ID do Funcionario',
+      COUNT(OrderID) AS 'Ordem dos pedidos' 
+FROM Orders
+GROUP BY EmployeeID 
+ORDER BY COUNT(OrderID) DESC
+LIMIT 5;
+
+Exercicio 4
+SELECT COUNT(SupplierID) AS 'Numero de fornecedores',
+       Country AS Pais
+FROM Suppliers
+GROUP BY Country
+ORDER BY COUNT(SupplierID) DESC
+LIMIT 10;
+
+Exercicio 5
+SELECT OrderID AS 'ID do Pedido',
+       COUNT(ProductID) AS 'Numero de produtos diferentes'
+FROM OrderDetails
+GROUP BY OrderID
+ORDER BY COUNT(ProductID) DESC
+LIMIT 15;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Bloco 3: O Poder do Filtro em Agrupamentos (GROUP BY, HAVING e COUNT)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
