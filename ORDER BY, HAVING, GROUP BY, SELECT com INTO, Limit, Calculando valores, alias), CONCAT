@@ -83,7 +83,7 @@ LIMIT 8;
 Agrupamentos e Contagens (GROUP BY, COUNT e LIMIT)
 Exercicio 1
 SELECT City AS 'Cidade', 
-COUNT(CustomerID) AS "Numero de clientes"
+       COUNT(CustomerID) AS "Numero de clientes"
 FROM Customers
 GROUP BY City 
 ORDER BY COUNT(CustomerID) DESC
@@ -99,7 +99,7 @@ LIMIT 3 ;
 
 Exercicio 3 
 SELECT EmployeeID AS 'ID do Funcionario',
-      COUNT(OrderID) AS 'Ordem dos pedidos' 
+       COUNT(OrderID) AS 'Ordem dos pedidos' 
 FROM Orders
 GROUP BY EmployeeID 
 ORDER BY COUNT(OrderID) DESC
@@ -162,6 +162,45 @@ LIMIT 15;
 
 Bloco 3: O Poder do Filtro em Agrupamentos (GROUP BY, HAVING e COUNT)
 
+Exercicio 1 
+SELECT Country AS Pais,
+       COUNT(CustomerID) AS "Numero dos Clientes"
+FROM Customers
+GROUP BY Country
+HAVING COUNT(CustomerID) > 5
+ORDER BY COUNT(CustomerID) DESC;
+
+Exercicio 2
+SELECT EmployeeID AS Funcionarios,
+       COUNT(OrderID) AS "PedidosID"
+FROM Orders
+GROUP BY EmployeeID
+HAVING COUNT(OrderID) > 10
+ORDER BY COUNT(OrderID) DESC;
+
+Exercicio 3 
+SELECT CategoryID AS 'Categoria',
+ COUNT(ProductID) AS 'Numero de produtos'
+FROM Products
+GROUP BY CategoryID
+HAVING COUNT(ProductID) > 12
+ORDER BY COUNT(ProductID) DESC;
+
+Exercicio 4 
+SELECT City AS 'Cidade',
+       COUNT(SupplierID) AS 'Numero de fornecedores'
+FROM Suppliers
+GROUP BY City
+HAVING COUNT(SupplierID) =2
+ORDER BY City ASC;
+
+Exercicio 5 
+SELECT OrderID AS 'Ordens',
+       COUNT(DISTINCT ProductID) AS 'produtos distintos'
+FROM OrderDetails
+GROUP BY OrderID
+HAVING COUNT(DISTINCT ProductID) > 3
+ORDER BY COUNT(DISTINCT ProductID)  DESC;
 
 
 
@@ -193,6 +232,22 @@ Bloco 3: O Poder do Filtro em Agrupamentos (GROUP BY, HAVING e COUNT)
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Bloco 4: Criação de Tabelas e Backups (SELECT INTO)
 
 
 
