@@ -33,54 +33,39 @@ FROM Products
 ORDER BY Price DESC
 LIMIT 8;
 
+Exercicio 6
+SELECT CONCAT (customername,' , ',city) AS 'NomeCliente e Cidade'
+FROM Customers
+LIMIT 12;
 
+Exercicio 7 
+SELECT quantity AS 'Quantidade',
+(100 - quantity) AS 'Diferenca'
+FROM OrderDetails
+LIMIT 20;
 
+Exercicio 8 
+SELECT CONCAT (categoryname,' - ',description) AS 'NomeCategoria - Descricao'
+FROM Categories
+LIMIT 5;
 
+Exercicio 9 
+SELECT (SELECT suppliername
+FROM Suppliers
+WHERE Suppliers.supplierid = Products.supplierid) AS 'NomeFornecedor',
+productname AS 'NomeProduto',
+price*50 AS '(Custo de 50 Unidades)'
+FROM Products
+LIMIT 10;
 
+Exercicio 10 
+SELECT Customername AS 'NomeCliente',
+CONCAT(Address,', ',City,', ',Postalcode) AS 'Morada Completa'
+FROM Customers
+LIMIT 25;
 
+Bloco 2: Agrupamentos e Contagens (GROUP BY, COUNT e LIMIT)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Agrupamentos e Contagens (GROUP BY, COUNT e LIMIT)
 Exercicio 1
 SELECT City AS 'Cidade', 
        COUNT(CustomerID) AS "Numero de clientes"
@@ -121,44 +106,40 @@ GROUP BY OrderID
 ORDER BY COUNT(ProductID) DESC
 LIMIT 15;
 
+Exercicio 6
+SELECT
+City AS 'Cidade',
+COUNT(*) AS Quantidade
+FROM Customers
+GROUP BY City
+LIMIT 2;
 
+Exercicio 7 
+SELECT supplierid AS 'IDFornecedor',
+COUNT(*) AS TotalProdutos
+FROM Products
+GROUP BY SupplierID
+LIMIT 5;
 
+Exercicio 8 
+SELECT orderdate AS 'DataPedido',
+COUNT(*) AS 'TotalEncomendas'
+FROM Orders
+GROUP BY orderdate
+ORDER BY TotalEncomendas DESC
+LIMIT 10;
 
+Exercicio 9
+SELECT PostalCode AS 'Codigo Postal',
+       COUNT(*) AS 'Total de Clientes'
+FROM Customers
+GROUP BY PostalCode
+ORDER BY 'Total de Clientes' DESC
+LIMIT 8;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Exercicio 10 
+SELECT COUNT(DISTINCT CategoryID) AS 'Total de categorias'
+FROM Products;
 
 Bloco 3: O Poder do Filtro em Agrupamentos (GROUP BY, HAVING e COUNT)
 
@@ -202,57 +183,81 @@ GROUP BY OrderID
 HAVING COUNT(DISTINCT ProductID) > 3
 ORDER BY COUNT(DISTINCT ProductID)  DESC;
 
+Exercicio 6 
+SELECT City AS Cidade, 
+       COUNT(CustomerName) AS 'Total de clientes'
+FROM Customers
+GROUP BY City
+HAVING COUNT(CustomerName) > 3
+ORDER BY 'Total de clientes' DESC;
+
+Exercicio 7 
+SELECT SupplierID AS Fornecedor,
+       COUNT(ProductID) AS 'Total de produtos'
+FROM Products
+GROUP BY SupplierID
+HAVING COUNT(ProductID) < 5
+ORDER BY 'Total de produtos' ASC;
+
+Exercicio 8 
 
 
 
 
+Exercicio 9 
+SELECT YEAR(BirthDate) AS 'Ano de Nascimento',
+       COUNT(*) AS 'Total de funcionarios'
+FROM Employees
+GROUP BY YEAR(BirthDate)
+HAVING COUNT(*) > 1
+ORDER BY 'Ano de Nascimento' DESC;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Exercicio 10 
+SELECT Country AS Pais,
+       COUNT(*) AS 'Total de fornecedores'
+FROM Suppliers
+GROUP BY Country
+HAVING COUNT(*) > 1
+ORDER BY 'Total de fornecedores' DESC;
 
 Bloco 4: Criação de Tabelas e Backups (SELECT INTO)
 
 
+Não foi possivel fazer, a plataforma não permitiu. 
 
+Bloco 5: O Desafio Final - A Mescla Total (Senai Master)
+Exercicio 1 
+SELECT 
+    CONCAT('Categoria No ', CategoryID) AS Categoria,
+    COUNT(ProductID) AS 'Produtos totais '
+FROM Products
+GROUP BY CategoryID
+HAVING COUNT (ProductID) > 5
+ORDER BY  'Produtos totais ' DESC
+LIMIT 3;
 
+Exercicio 5
+ SELECT 
+    CONCAT('Produto : ', ProductName, ' IVA : ', 
+    ROUND(Price * 0.23, 2)) AS 'Detalhe do Produto'
+FROM Products
+LIMIT 15;
 
+Exercicio 6
+SELECT 
+    ProductID AS 'ID do Produto',
+    COUNT(Quantity) AS Quantidade
+FROM OrderDetails
+GROUP BY ProductID
+HAVING COUNT(Quantity) > 20
+ORDER BY  'Quantidade:' DESC;
 
-
+Exercicio 8 
+SELECT 
+    EmployeeID AS Funcionarios ,
+    COUNT(OrderID) AS 'Total de encomendas:'
+FROM Orders
+GROUP BY EmployeeID
+HAVING COUNT(OrderID) * 2 > 50
+ORDER BY 'Total de encomendas:' DESC;
 
