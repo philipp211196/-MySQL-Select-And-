@@ -200,7 +200,17 @@ HAVING COUNT(ProductID) < 5
 ORDER BY 'Total de produtos' ASC;
 
 Exercicio 8 
-
+SELECT COUNT(*) AS 'Pares duplicados'
+FROM (
+    SELECT ProductCount
+    FROM (
+        SELECT CategoryID, COUNT(*) AS ProductCount
+        FROM Products
+        GROUP BY CategoryID
+    ) AS t
+    GROUP BY ProductCount
+    HAVING COUNT(*) > 1
+) AS resultado;
 
 
 
