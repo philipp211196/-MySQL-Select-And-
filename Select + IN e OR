@@ -322,7 +322,10 @@ FROM orderdetails
 WHERE orderdetailid<20 OR quantity>30
 ORDER BY orderid;
 
-/*Exercícios: SELECT ... FROM WHERE IN ORDER BY*/
+
+/*BLoco 2: SELECT ... FROM WHERE IN ORDER BY*/
+
+
 /*Exercicio 1*/
 
 SELECT OrderID as Ordens
@@ -333,7 +336,7 @@ ORDER BY Quantity ;
 /*Exercicio 2*/
 SELECT ProductID AS 'ID do Produto'
 FROM OrderDetails
-WHERE OrderID IN (2,4,6,8)
+WHERE ProductID IN (2,4,6,8)
 ORDER BY  OrderDetailID ;
 
 /*Exercicio 3*/
