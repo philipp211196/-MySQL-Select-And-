@@ -444,6 +444,185 @@ FROM OrderDetails
 WHERE Quantity IN (5, 10, 15)
 ORDER BY OrderID;
 
+/*Exercicio 21*/
+SELECT OrderdetailID AS 'IDDetalhedePedido',
+OrderID AS 'IDpedido',
+ProductID AS 'IDproduto',
+Quantity AS 'Quantidade'
+FROM orderdetails
+WHERE OrderDetailID IN (25,50,75,100)
+ORDER BY quantity;
+
+/*EX 22*/
+SELECT OrderdetailID AS 'IDDetalhedePedido',
+OrderID AS 'IDpedido',
+ProductID AS 'IDproduto',
+Quantity AS 'Quantidade'
+FROM orderdetails
+WHERE productid IN (9,18,27)
+ORDER BY Orderid;
+
+/*EX 23*/
+SELECT OrderdetailID AS 'IDDetalhedePedido',
+OrderID AS 'IDpedido',
+ProductID AS 'IDproduto',
+Quantity AS 'Quantidade'
+FROM orderdetails
+WHERE quantity IN (12,14,16)
+ORDER BY PRODUCTID;
+
+/*EX 24*/
+SELECT OrderdetailID AS 'IDDetalhedePedido',
+OrderID AS 'IDpedido',
+ProductID AS 'IDproduto',
+Quantity AS 'Quantidade'
+FROM orderdetails
+WHERE Orderid IN (400,500,600)
+ORDER BY quantity;
+
+/*EX 25*/
+SELECT OrderdetailID AS 'IDDetalhedePedido',
+OrderID AS 'IDpedido',
+ProductID AS 'IDproduto',
+Quantity AS 'Quantidade'
+FROM orderdetails
+WHERE Orderdetailid IN (20,40,60,80)
+ORDER BY orderid;
+
+/*EX 26*/
+SELECT OrderdetailID AS 'IDDetalhedePedido',
+OrderID AS 'IDpedido',
+ProductID AS 'IDproduto',
+Quantity AS 'Quantidade'
+FROM orderdetails
+WHERE productid IN (5,10,20)
+ORDER BY QUANTITY;
+
+/*EX 27*/
+SELECT OrderdetailID AS 'IDDetalhedePedido',
+OrderID AS 'IDpedido',
+ProductID AS 'IDproduto',
+Quantity AS 'Quantidade'
+FROM orderdetails
+WHERE QUANTITY IN (8,16,24,32)
+ORDER BY ORDERDETAILID;
+
+/*EX 28*/
+SELECT OrderdetailID AS 'IDDetalhedePedido',
+OrderID AS 'IDpedido',
+ProductID AS 'IDproduto',
+Quantity AS 'Quantidade'
+FROM orderdetails
+WHERE ORDERID IN (300,400,500)
+ORDER BY PRODUCTID;
+
+/*EX 29*/
+SELECT OrderdetailID AS 'IDDetalhedePedido',
+OrderID AS 'IDpedido',
+ProductID AS 'IDproduto',
+Quantity AS 'Quantidade'
+FROM orderdetails
+WHERE QUANTITY IN (15,30,45)
+ORDER BY ORDERID;
+
+/*EX 30*/
+SELECT OrderdetailID AS 'IDDetalhedePedido',
+OrderID AS 'IDpedido',
+ProductID AS 'IDproduto',
+Quantity AS 'Quantidade'
+FROM orderdetails
+WHERE ORDERDETAILID IN (50,150,250)
+ORDER BY QUANTITY;
+
+/*EX 31*/
+SELECT OrderdetailID AS 'IDDetalhedePedido',
+OrderID AS 'IDpedido',
+ProductID AS 'IDproduto',
+Quantity AS 'Quantidade'
+FROM orderdetails
+WHERE ORDERDETAILID IN (100,200,300,400)
+ORDER BY QUANTITY;
+
+/*EX 32*/
+SELECT OrderdetailID AS 'IDDetalhedePedido',
+OrderID AS 'IDpedido',
+ProductID AS 'IDproduto',
+Quantity AS 'Quantidade'
+FROM orderdetails
+WHERE PRODUCTID IN (10,20,30,40)
+ORDER BY ORDERID;
+
+/*EX 33*/
+SELECT OrderdetailID AS 'IDDetalhedePedido',
+OrderID AS 'IDpedido',
+ProductID AS 'IDproduto',
+Quantity AS 'Quantidade'
+FROM orderdetails
+WHERE QUANTITY IN (5,10,15,20)
+ORDER BY PRODUCTID;
+
+/*EX 34*/
+SELECT OrderdetailID AS 'IDDetalhedePedido',
+OrderID AS 'IDpedido',
+ProductID AS 'IDproduto',
+Quantity AS 'Quantidade'
+FROM orderdetails
+WHERE ORDERID IN (50,150,250,350)
+ORDER BY QUANTITY;
+
+/*EX 35*/
+SELECT OrderdetailID AS 'IDDetalhedePedido',
+OrderID AS 'IDpedido',
+ProductID AS 'IDproduto',
+Quantity AS 'Quantidade'
+FROM orderdetails
+WHERE ORDERDETAILID IN (1,3,5,7)
+ORDER BY ORDERID;
+
+/*EX 36*/
+SELECT OrderdetailID AS 'IDDetalhedePedido',
+OrderID AS 'IDpedido',
+ProductID AS 'IDproduto',
+Quantity AS 'Quantidade'
+FROM orderdetails
+WHERE PRODUCTID IN (13,26,39)
+ORDER BY QUANTITY;
+
+/*EX 37*/
+SELECT OrderdetailID AS 'IDDetalhedePedido',
+OrderID AS 'IDpedido',
+ProductID AS 'IDproduto',
+Quantity AS 'Quantidade'
+FROM orderdetails
+WHERE QUANTITY IN (22,44,66,88)
+ORDER BY ORDERDETAILID;
+
+/*EX 38*/
+SELECT OrderdetailID AS 'IDDetalhedePedido',
+OrderID AS 'IDpedido',
+ProductID AS 'IDproduto',
+Quantity AS 'Quantidade'
+FROM orderdetails
+WHERE ORDERID IN (90,180,270)
+ORDER BY ProductID;
+
+/*EX 39*/
+SELECT OrderdetailID AS 'IDDetalhedePedido',
+OrderID AS 'IDpedido',
+ProductID AS 'IDproduto',
+Quantity AS 'Quantidade'
+FROM orderdetails
+WHERE QUANTITY IN (8,16,24,32)
+ORDER BY ORDERID;
+
+/*EX 40*/
+SELECT OrderdetailID AS 'IDDetalhedePedido',
+OrderID AS 'IDpedido',
+ProductID AS 'IDproduto',
+Quantity AS 'Quantidade'
+FROM orderdetails
+WHERE Orderdetailid IN (101,201,301,401)
+ORDER BY Quantity;
 
 
 
