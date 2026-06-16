@@ -163,6 +163,165 @@ FROM OrderDetails
 WHERE  ProductID>15 OR    OrderDetailID LIKE '%2'
 ORDER BY  OrderID ;
 
+/*EX 21*/
+SELECT OrderID AS 'IDPedido',
+productid AS 'IDProduto',
+quantity AS 'Quantidade'
+FROM orderdetails
+WHERE ProductID>50 OR Quantity<5
+ORDER BY OrderID;
+
+/*EX 22*/
+SELECT ProductID AS 'IDProduto',
+orderdetailid AS 'IDDetalhedePedido',
+Quantity AS 'Quantidade'
+FROM orderdetails
+WHERE OrderDetailID LIKE '%3' OR quantity BETWEEN 10 AND 15
+ORDER BY ProductID;
+
+/*EX 23*/
+SELECT OrderID AS 'IDOrdem',
+Quantity AS 'Quantidade'
+FROM orderdetails
+WHERE orderid %7=0 OR quantity=25
+ORDER BY Quantity;
+
+/*EX 24*/
+SELECT Orderdetailid AS 'IdDetalhedePedido',
+ProductID AS 'IDProduto',
+orderid AS 'IDPedido'
+FROM orderdetails
+WHERE OrderDetailID<10 OR ProductID BETWEEN 15 AND 20
+ORDER BY OrderID;
+
+/*EX 25*/
+SELECT ORDERID AS 'IDpedido',
+Quantity AS 'Quantidade',
+OrderDetailID AS 'IDdetalhedePedido'
+FROM orderdetails
+WHERE Orderid>300 OR Quantity %2=0
+ORDER BY OrderDetailID;
+
+/*EX 26*/
+SELECT Productid AS 'IDproduto',
+Quantity AS 'Quantidade',
+orderid AS 'IDpedido'
+FROM orderdetails
+WHERE ProductID %9=0 OR Quantity BETWEEN 1 AND 10
+ORDER BY OrderID;
+
+/*EX 27*/
+SELECT orderdetailid AS 'IDDetalhedePedido',
+ProductID AS 'IDpedido',
+Quantity AS 'Quantidade'
+FROM orderdetails
+WHERE OrderDetailID=100 OR productid>25
+ORDER BY Quantity;
+
+/*EX 28*/
+SELECT Quantity AS 'Quantidade',
+OrderID AS 'IDPedido',
+ProductID AS 'IDproduto'
+FROM orderdetails
+WHERE Quantity=50 OR OrderID LIKE '%8'
+ORDER BY ProductID;
+
+/*EX 29*/
+SELECT productid AS 'IDproduto',
+Quantity AS 'Quantidade',
+orderdetailid AS 'IDdetalhedePedido'
+FROM orderdetails
+WHERE productid<20 OR quantity>40
+ORDER BY OrderDetailID;
+
+/*EX 30*/
+SELECT Orderdetailid AS 'IDdetalhedepedido',
+Quantity AS 'quantidade',
+Orderid AS 'IDpedido'
+FROM orderdetails
+WHERE OrderDetailID %5 OR Quantity %2=1
+ORDER BY OrderID;
+
+/*EX 31*/
+SELECT QUANTITY AS 'quantidade',
+Orderdetailid AS 'IDdetalhedepedido',
+productid AS 'IDproduto'
+FROM Orderdetails
+WHERE QUANTITY>10 OR Orderdetailid<5
+ORDER BY Productid;
+
+/*EX 32*/
+SELECT productid AS 'IDproduto',
+ORderid AS 'IDpedido',
+Quantity AS 'Quantidade'
+FROM orderdetails
+WHERE ProductID %2=0 OR orderid>500
+ORDER BY Quantity;
+
+/*EX 33*/
+SELECT orderdetailid AS 'IDdetalhedepedido',
+Quantity AS 'Quantidade',
+Orderid AS 'IDpedido'
+FROM orderdetails
+WHERE orderdetailid=15 OR quantity<20
+ORDER BY orderid;
+
+/*EX 34*/
+SELECT quantity AS 'quantidade',
+productid AS 'idproduto',
+orderdetailid AS 'IDdetalhedepedido'
+FROM orderdetails
+WHERE quantity %2=1 OR productid>50
+ORDER BY OrderDetailID;
+
+/*EX 35*/
+SELECT orderid AS 'idpedido',
+productid AS 'idproduto',
+quantity AS 'quantidade'
+FROM orderdetails
+WHERE orderid LIKE '%0' OR Productid BETWEEN 30 AND 40
+ORDER BY Quantity;
+
+/*EX 36*/
+SELECT quantity AS 'quantidade',
+orderid AS 'idpedido',
+productid AS 'idproduto'
+FROM Orderdetails
+WHERE quantity>50 OR orderid<100
+ORDER BY Productid;
+
+/*EX 37*/
+SELECT ORDERDETAILID AS 'iddetalhedepedido',
+quantity AS 'quantidade',
+orderid AS 'IDpedido'
+FROM orderdetails
+WHERE OrderDetailID %10=0 OR quantity BETWEEN 5 AND 15
+ORDER BY Orderid;
+
+/*EX 38*/
+SELECT quantity AS 'quantidade',
+productid AS 'idproduto',
+orderdetailid AS 'iddetalhedepedido'
+FROM orderdetails
+WHERE quantity=100 OR productid<5
+ORDER BY OrderDetailID;
+
+/*EX 39*/
+SELECT productid AS 'idproduto',
+orderid AS 'idpedido',
+quantity AS 'quantidade'
+FROM orderdetails
+WHERE productid>40 OR orderid %6=0
+ORDER BY quantity;
+
+/*EX 40*/
+SELECT orderdetailid AS 'iddetalhedepedido',
+quantity AS 'quantidade',
+orderid AS 'idpedido'
+FROM orderdetails
+WHERE orderdetailid<20 OR quantity>30
+ORDER BY orderid;
+
 /*Exercícios: SELECT ... FROM WHERE IN ORDER BY*/
 /*Exercicio 1*/
 
