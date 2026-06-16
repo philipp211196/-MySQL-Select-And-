@@ -1,5 +1,6 @@
 CREATE DATABASE sisdbm26;
 USE sisdbm26;
+
 CREATE TABLE Customers(
 CustomerID INT PRIMARY KEY,
 CustomerName VARCHAR (100) ,
@@ -17,12 +18,12 @@ Address VARCHAR(255),
 City VARCHAR(60),
 PostalCode VARCHAR(8),
 Country VARCHAR(60),
-Phone INT
+Phone VARCHAR (20)
 );
 CREATE TABLE Shippers(
 ShipperID INT PRIMARY KEY,
 ShipperName VARCHAR (100),
-Phone INT
+Phone VARCHAR (20)
 );
 CREATE TABLE Employees(
 EmployeeID INT PRIMARY KEY,
@@ -44,7 +45,7 @@ ProductID INT PRIMARY KEY,
 ProductName VARCHAR(150),
 SupplierID INT,
 CategoryID INT,
-Unit INT,
+Unit VARCHAR(100),
 Price DECIMAL,
 FOREIGN KEY (SupplierID) REFERENCES Suppliers (SupplierID),
 FOREIGN KEY (CategoryID) REFERENCES Categories (CategoryID)
@@ -52,11 +53,16 @@ FOREIGN KEY (CategoryID) REFERENCES Categories (CategoryID)
 CREATE TABLE Orders(
 OrderID INT PRIMARY KEY,
 CustomerID INT,
+EmployeeID INT,
 OrderDate DATE,
 ShipperID INT,
+FOREIGN KEY (EmployeeID) REFERENCES Employees (EmployeeID),
 FOREIGN KEY (CustomerID) REFERENCES Customers (CustomerID),
 FOREIGN KEY (ShipperID) REFERENCES Shippers (ShipperID)
 );
+
+SELECT ProductID AS Produtos , ProductName AS 'Nomes de produto'
+FROM Products;
 CREATE TABLE OrderDetails(
 OrderDetailID INT PRIMARY KEY,
 OrderID INT,
@@ -68,7 +74,6 @@ FOREIGN KEY (ProductID) REFERENCES Products (ProductID)
 
 ALTER TABLE Customers 
 MODIFY PostalCode VARCHAR (15);
-
 
 INSERT INTO Categories VALUES(1,'Beverages','Soft drinks, coffees, teas, beers, and ales');
 INSERT INTO Categories VALUES(2,'Condiments','Sweet and savory sauces, relishes, spreads, and seasonings');
@@ -1009,3 +1014,4 @@ INSERT INTO OrderDetails VALUES(515,10442,54,80);
 INSERT INTO OrderDetails VALUES(516,10442,66,60);
 INSERT INTO OrderDetails VALUES(517,10443,11,6);
 INSERT INTO OrderDetails VALUES(518,10443,28,12);
+
