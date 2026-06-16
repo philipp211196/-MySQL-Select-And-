@@ -61,8 +61,6 @@ FOREIGN KEY (CustomerID) REFERENCES Customers (CustomerID),
 FOREIGN KEY (ShipperID) REFERENCES Shippers (ShipperID)
 );
 
-SELECT ProductID AS Produtos , ProductName AS 'Nomes de produto'
-FROM Products;
 CREATE TABLE OrderDetails(
 OrderDetailID INT PRIMARY KEY,
 OrderID INT,
