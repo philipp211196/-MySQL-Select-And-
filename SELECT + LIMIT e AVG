@@ -1,0 +1,674 @@
+/*SELECT LIMIT FROM WHERE ORDER BY
+ EXERCICIO 1 */
+
+SELECT *
+FROM Orderdetails
+LIMIT 5;
+
+/* EXERCICIO 2 */
+SELECT Quantity AS Quantidade ,
+	OrderID AS 'Ordens '
+FROM Orderdetails
+ORDER BY OrderID ASC
+LIMIT 3;
+
+/* EXERCICIO 3 */
+SELECT Quantity AS Quantidade 
+FROM Orderdetails
+ORDER BY Quantity DESC
+LIMIT 7;
+
+/* EXERCICIO 4 */
+SELECT ProductID AS 'ID do Produto'
+FROM Orderdetails
+WHERE ProductID	= 4 
+ORDER BY ProductID 
+LIMIT 10;
+
+/* EXERCICIO 5 */
+
+SELECT OrderID AS 'Ordens ',
+       OrderDetailID AS 'Detalhe da ordem' 
+FROM Orderdetails
+ORDER BY OrderDetailID asc 
+LIMIT 2;
+
+/* EXERCICIO 6 */
+SELECT  Quantity AS Quantidade 
+FROM Orderdetails
+ORDER BY Quantidade  DESC
+LIMIT 15;
+
+/* EXERCICIO 7 */
+SELECT  Quantity AS Quantidade, 
+		ProductID AS 'ID do Produto'
+FROM Orderdetails
+ORDER BY ProductID  ASC
+LIMIT 20;
+
+/* EXERCICIO 8 */
+SELECT  Quantity AS Quantidade, 
+		OrderDetailID AS 'Detalhe da ordem' 
+FROM Orderdetails
+ORDER BY OrderDetailID asc 
+LIMIT 8;
+
+/* EXERCICIO 9*/
+SELECT OrderID AS 'Ordens ',
+		ProductID AS 'ID do Produto'
+FROM Orderdetails
+WHERE ProductID  >3
+ORDER BY OrderID ASC
+LIMIT 5;
+
+/* EXERCICIO 10*/
+SELECT OrderID AS 'Ordens '
+FROM Orderdetails
+ORDER BY  Quantity ASC
+LIMIT 10;
+
+/* EXERCICIO 11*/
+SELECT  Quantity AS Quantidade, 
+		OrderDetailID AS 'Detalhe da ordem' 
+FROM Orderdetails
+WHERE Quantity < 15
+ORDER BY OrderDetailID ASC
+LIMIT 12;
+
+/* EXERCICIO 12*/
+SELECT Quantity AS Quantidade, 
+	   ProductID AS 'ID do Produto'
+FROM Orderdetails
+WHERE ProductID  %2=0
+ORDER BY Quantity ASC
+LIMIT 6;
+
+/* EXERCICIO 13*/
+SELECT ProductID AS 'ID do Produto'
+FROM Orderdetails
+ORDER BY ProductID DESC
+LIMIT 5;
+
+/* EXERCICIO 14*/
+SELECT Quantity AS Quantidade ,
+	   OrderID AS 'Ordens '
+FROM Orderdetails
+ORDER BY OrderID , Quantity ASC
+LIMIT 7;
+
+/* EXERCICIO 15*/
+SELECT Quantity AS Quantidade ,
+        ProductID AS 'ID do Produto',
+	    OrderID AS 'Ordens '
+FROM Orderdetails
+WHERE Quantity <8
+ORDER BY OrderID,ProductID asc
+LIMIT 3;
+
+/* EXERCICIO 16*/
+SELECT Quantity AS Quantidade ,
+	   OrderID AS 'Ordens '
+FROM Orderdetails
+ORDER BY OrderID
+LIMIT 9;
+
+/* EXERCICIO 17*/
+SELECT OrderID AS 'Ordens'
+FROM Orderdetails
+WHERE OrderID = 20
+ORDER BY OrderID
+LIMIT 2;
+
+/* EXERCICIO 18*/
+SELECT Quantity AS Quantidade, 
+       ProductID AS 'ID do Produto'
+FROM Orderdetails
+WHERE Quantity > 25
+ORDER BY ProductID ASC
+LIMIT 10;
+
+/* EXERCICIO 19*/
+SELECT Quantity AS Quantidade, 
+	   OrderDetailID AS 'Detalhe da ordem' 
+FROM Orderdetails
+WHERE OrderDetailID < 50
+ORDER BY Quantity  ASC
+LIMIT 4;
+
+/* EXERCICIO 20*/
+SELECT ProductID AS 'ID do Produto',
+	   OrderID AS 'Ordens'
+FROM Orderdetails
+WHERE  OrderID BETWEEN 10 AND 30
+ORDER BY ProductID ASC
+LIMIT 6;
+
+/* EXERCICIO 21*/
+SELECT Quantity AS Quantidade, 
+	   OrderDetailID AS 'Detalhe da ordem' 
+FROM Orderdetails
+ORDER BY OrderDetailID DESC
+LIMIT 8;
+
+/* EXERCICIO 22*/
+SELECT ProductID AS 'ID do Produto',
+	   OrderID AS 'Ordens'
+FROM Orderdetails
+WHERE ProductID LIKE '%7'
+ORDER BY OrderID
+LIMIT 5;
+
+
+/* EXERCICIO 23*/
+SELECT Quantity AS Quantidade, 
+	   OrderID AS 'Ordens'
+FROM Orderdetails
+WHERE OrderID >100
+ORDER BY Quantity
+LIMIT 3;
+
+/* EXERCICIO 24*/
+SELECT Quantity AS Quantidade, 
+	   OrderDetailID AS 'Detalhe da ordem' 
+FROM Orderdetails
+WHERE Quantity >15
+ORDER BY OrderDetailID
+LIMIT 10;
+
+/* EXERCICIO 25*/
+SELECT ProductID AS 'ID do Produto',
+	   OrderID AS 'Ordens'
+FROM Orderdetails
+ORDER BY ProductID ASC
+LIMIT 12;
+
+/* EXERCICIO 26*/
+SELECT orderdetailid AS 'IDDetalhedePedido',
+OrderID AS 'IDpedido',
+ProductID AS 'IDProduto',
+Quantity AS 'Quantidade'
+FROM orderdetails
+WHERE productid %3=0
+ORDER BY Quantity
+LIMIT 7;
+
+-- EX 27
+SELECT orderdetailid AS 'IDDetalhedePedido',
+OrderID AS 'IDpedido',
+ProductID AS 'IDProduto',
+Quantity AS 'Quantidade'
+FROM orderdetails
+WHERE OrderDetailID BETWEEN 5 AND 50
+ORDER BY Orderid
+LIMIT 10;
+
+-- EX 28
+SELECT ProductID AS 'IDProduto',
+Quantity AS 'Quantidade'
+FROM orderdetails
+ORDER BY quantity DESC,productid
+LIMIT 6;
+
+-- EX29
+SELECT orderdetailid AS 'IDDetalhedePedido',
+OrderID AS 'IDpedido',
+ProductID AS 'IDProduto',
+Quantity AS 'Quantidade'
+FROM orderdetails
+WHERE productid %2=1
+ORDER BY quantity
+LIMIT 4;
+
+-- EX30
+SELECT orderdetailid AS 'IDDetalhedePedido',
+OrderID AS 'IDpedido',
+ProductID AS 'IDProduto',
+Quantity AS 'Quantidade'
+FROM orderdetails
+WHERE orderid>15
+ORDER BY orderid ASC,productid
+LIMIT 8;
+
+-- EX31
+SELECT orderdetailid AS 'IDDetalhedePedido',
+OrderID AS 'IDpedido',
+ProductID AS 'IDProduto',
+Quantity AS 'Quantidade'
+FROM orderdetails
+WHERE quantity<5
+ORDER BY QUANTITY ASC,orderid
+LIMIT 3;
+
+-- EX32
+SELECT orderdetailid AS 'IDDetalhedePedido',
+OrderID AS 'IDpedido',
+ProductID AS 'IDProduto',
+Quantity AS 'Quantidade'
+FROM orderdetails
+WHERE productid %2=0
+ORDER BY orderid
+LIMIT 5;
+
+-- EX33
+SELECT orderdetailid AS 'IDDetalhedePedido',
+OrderID AS 'IDpedido',
+ProductID AS 'IDProduto',
+Quantity AS 'Quantidade'
+FROM orderdetails
+ORDER BY OrderDetailID DESC
+LIMIT 10;
+
+-- EX34
+SELECT orderdetailid AS 'IDDetalhedePedido',
+OrderID AS 'IDpedido',
+ProductID AS 'IDProduto',
+Quantity AS 'Quantidade'
+FROM orderdetails
+WHERE QUANTITY %5=0
+ORDER BY productid
+LIMIT  7;
+
+-- EX35
+SELECT orderdetailid AS 'IDDetalhedePedido',
+OrderID AS 'IDpedido',
+ProductID AS 'IDProduto',
+Quantity AS 'Quantidade'
+FROM orderdetails
+ORDER BY productid ASC,orderid
+LIMIT 2;
+
+-- EX36
+SELECT orderdetailid AS 'IDDetalhedePedido',
+OrderID AS 'IDpedido',
+ProductID AS 'IDProduto',
+Quantity AS 'Quantidade'
+FROM orderdetails
+WHERE orderid LIKE '%1'
+ORDER BY quantity
+LIMIT 8;
+
+-- EX37
+SELECT orderdetailid AS 'IDDetalhedePedido',
+OrderID AS 'IDpedido',
+ProductID AS 'IDProduto',
+Quantity AS 'Quantidade'
+FROM orderdetails
+ORDER BY orderid DESC,OrderDetailID
+LIMIT 4;
+
+-- EX38
+SELECT orderdetailid AS 'IDDetalhedePedido',
+OrderID AS 'IDpedido',
+ProductID AS 'IDProduto',
+Quantity AS 'Quantidade'
+FROM orderdetails
+WHERE QUANTITY>30
+ORDER BY PRODUCTID
+LIMIT 9;
+
+-- EX39
+SELECT orderdetailid AS 'IDDetalhedePedido',
+OrderID AS 'IDpedido',
+ProductID AS 'IDProduto',
+Quantity AS 'Quantidade'
+FROM orderdetails
+ORDER BY PRODUCTID ASC,ORDERID
+LIMIT 5;
+
+-- EX40
+SELECT orderdetailid AS 'IDDetalhedePedido',
+OrderID AS 'IDpedido',
+ProductID AS 'IDProduto',
+Quantity AS 'Quantidade'
+FROM orderdetails
+ORDER BY orderdetailid DESC,quantity
+LIMIT 6;
+
+-- EX41
+SELECT orderdetailid AS 'IDDetalhedePedido',
+OrderID AS 'IDpedido',
+ProductID AS 'IDProduto',
+Quantity AS 'Quantidade'
+FROM orderdetails
+WHERE ORDERID %2=1
+ORDER BY QUANTITY
+LIMIT 10;
+
+-- EX42
+SELECT orderdetailid AS 'IDDetalhedePedido',
+OrderID AS 'IDpedido',
+ProductID AS 'IDProduto',
+Quantity AS 'Quantidade'
+FROM orderdetails
+WHERE QUANTITY=20
+ORDER BY PRODUCTID
+LIMIT 3;
+
+-- EX43
+SELECT orderdetailid AS 'IDDetalhedePedido',
+OrderID AS 'IDpedido',
+ProductID AS 'IDProduto',
+Quantity AS 'Quantidade'
+FROM orderdetails
+WHERE ORDERDETAILID<200
+ORDER BY ORDERID
+LIMIT 7;
+
+-- EX44
+SELECT orderdetailid AS 'IDDetalhedePedido',
+OrderID AS 'IDpedido',
+ProductID AS 'IDProduto',
+Quantity AS 'Quantidade'
+FROM orderdetails
+WHERE ORDERID BETWEEN 100 AND 200
+ORDER BY PRODUCTID
+LIMIT 5;
+
+-- EX45
+SELECT orderdetailid AS 'IDDetalhedePedido',
+OrderID AS 'IDpedido',
+ProductID AS 'IDProduto',
+Quantity AS 'Quantidade'
+FROM orderdetails
+ORDER BY QUANTITY DESC, OrderDetailID
+LIMIT 12;
+
+-- EX46
+SELECT orderdetailid AS 'IDDetalhedePedido',
+OrderID AS 'IDpedido',
+ProductID AS 'IDProduto',
+Quantity AS 'Quantidade'
+FROM orderdetails
+WHERE PRODUCTID<10
+ORDER BY ORDERID
+LIMIT 9;
+
+-- EX47
+SELECT orderdetailid AS 'IDDetalhedePedido',
+OrderID AS 'IDpedido',
+ProductID AS 'IDProduto',
+Quantity AS 'Quantidade'
+FROM orderdetails
+WHERE ORDERID LIKE '%0'
+ORDER BY ORDERID
+LIMIT 2;
+
+-- EX48
+SELECT orderdetailid AS 'IDDetalhedePedido',
+OrderID AS 'IDpedido',
+ProductID AS 'IDProduto',
+Quantity AS 'Quantidade'
+FROM orderdetails
+ORDER BY ORDERID ASC,PRODUCTID
+LIMIT 5;
+
+-- EX49
+SELECT orderdetailid AS 'IDDetalhedePedido',
+OrderID AS 'IDpedido',
+ProductID AS 'IDProduto',
+Quantity AS 'Quantidade'
+FROM orderdetails
+WHERE QUANTITY %4=0
+ORDER BY QUANTITY ASC,PRODUCTID
+LIMIT 6;
+
+-- EX50
+SELECT orderdetailid AS 'IDDetalhedePedido',
+OrderID AS 'IDpedido',
+ProductID AS 'IDProduto',
+Quantity AS 'Quantidade'
+FROM orderdetails
+ORDER BY PRODUCTID DESC,QUANTITY
+LIMIT 10;
+
+
+/*Lista de exercícios: SELECT AVG FROM WHERE ORDER BY */
+
+/* EXERCICIO 1*/
+SELECT FORMAT(AVG (Quantity), 2)AS Media
+FROM Orderdetails;
+
+/* EXERCICIO 2*/
+SELECT FORMAT(AVG (Quantity), 2)AS Media
+FROM Orderdetails
+WHERE OrderID > 10;
+
+/* EXERCICIO 3*/
+SELECT FORMAT(AVG (Quantity), 2)AS Media
+FROM Orderdetails
+WHERE ProductID = 5;
+
+/* EXERCICIO 4*/
+SELECT FORMAT(AVG (Quantity), 2)AS Media
+FROM Orderdetails
+WHERE OrderDetailID < 50;
+
+/* EXERCICIO 5*/
+SELECT FORMAT(AVG (Quantity), 2)AS Media
+FROM Orderdetails
+WHERE OrderID > 100;
+
+/* EXERCICIO 6*/
+SELECT FORMAT(AVG (Quantity), 2)AS Media
+FROM Orderdetails
+WHERE ProductID % 2 = 0;
+
+/* EXERCICIO 7*/
+SELECT FORMAT(AVG (Quantity), 2)AS Media
+FROM Orderdetails
+WHERE OrderDetailID % 2 <> 0;
+
+/* EXERCICIO 8*/
+SELECT FORMAT(AVG (Quantity), 2)AS Media
+FROM Orderdetails
+WHERE ProductID BETWEEN 5 AND 15;
+
+/* EXERCICIO 9*/
+SELECT FORMAT(AVG (Quantity), 2)AS Media
+FROM Orderdetails
+WHERE OrderID LIKE '%0';
+
+/* EXERCICIO 10*/
+SELECT FORMAT(AVG (Quantity), 2)AS Media
+FROM Orderdetails
+WHERE OrderDetailID BETWEEN 10 AND 30;
+
+/* EXERCICIO 11*/
+SELECT FORMAT(AVG (Quantity), 2)AS Media
+FROM Orderdetails
+WHERE Quantity > 25;
+
+/* EXERCICIO 12*/
+SELECT FORMAT(AVG (Quantity), 2)AS Media
+FROM Orderdetails
+WHERE Quantity < 10;
+
+/* EXERCICIO 13*/
+SELECT FORMAT(AVG (Quantity), 2)AS Media
+FROM Orderdetails
+WHERE ProductID > 7;
+
+/* EXERCICIO 14*/
+SELECT FORMAT(AVG (Quantity), 2)AS Media
+FROM Orderdetails
+WHERE OrderID < 20;
+
+/* EXERCICIO 15*/
+SELECT FORMAT(AVG (Quantity), 2)AS Media
+FROM Orderdetails
+WHERE Quantity % 5 = 0;
+
+/* EXERCICIO 16*/
+SELECT FORMAT(AVG (Quantity), 2)AS Media
+FROM Orderdetails
+WHERE ProductID < 12;
+
+/* EXERCICIO 17*/
+SELECT FORMAT(AVG (Quantity), 2)AS Media
+FROM Orderdetails
+WHERE OrderID BETWEEN 15 AND 30;
+
+/* EXERCICIO 18*/
+SELECT FORMAT(AVG (Quantity), 2)AS Media
+FROM Orderdetails
+WHERE OrderDetailID LIKE '2%';
+
+/* EXERCICIO 19*/
+SELECT FORMAT(AVG (Quantity), 2)AS Media
+FROM Orderdetails
+WHERE ProductID > 10;
+
+/* EXERCICIO 20*/
+SELECT FORMAT(AVG (Quantity), 2)AS Media
+FROM Orderdetails
+WHERE OrderID % 2 <> 0;
+
+/* EXERCICIO 21*/
+SELECT FORMAT(AVG (Quantity), 2)AS Media
+FROM Orderdetails
+WHERE ProductID % 3 = 0;
+
+/* EXERCICIO 22*/
+SELECT FORMAT(AVG (Quantity), 2)AS Media
+FROM Orderdetails
+WHERE OrderDetailID > 30;
+
+/* EXERCICIO 23*/
+SELECT FORMAT(AVG (Quantity), 2)AS Media
+FROM Orderdetails
+WHERE Quantity BETWEEN 10 AND 20;
+
+/* EXERCICIO 24*/
+SELECT FORMAT(AVG (Quantity), 2)AS Media
+FROM Orderdetails
+WHERE OrderID LIKE '%5';
+
+/* EXERCICIO 25*/
+SELECT FORMAT(AVG (Quantity), 2)AS Media
+FROM Orderdetails
+WHERE ProductID IN (3,5,7);
+
+-- EX26
+SELECT FORMAT(AVG(Quantity),2) AS 'Quantidade Mediana'
+FROM orderdetails
+WHERE QUANTITY NOT BETWEEN 5 AND 15;
+
+-- EX27
+SELECT FORMAT(AVG(Quantity),2) AS 'Quantidade Mediana'
+FROM orderdetails
+WHERE PRODUCTID BETWEEN 5 AND 15;
+
+-- EX28
+SELECT FORMAT(AVG(Quantity),2) AS 'Quantidade Mediana'
+FROM orderdetails
+WHERE ORDERID=100;
+
+-- EX29
+SELECT FORMAT(AVG(Quantity),2) AS 'Quantidade Mediana'
+FROM orderdetails
+WHERE ORDERDETAILID BETWEEN 100 AND 200;
+
+-- EX30
+SELECT FORMAT(AVG(Quantity),2) AS 'Quantidade Mediana'
+FROM orderdetails
+WHERE QUANTITY>20;
+
+-- EX31
+SELECT FORMAT(AVG(Quantity),2) AS 'Quantidade Mediana'
+FROM orderdetails
+WHERE PRODUCTID NOT IN (1,2,3);
+
+-- EX32
+SELECT FORMAT(AVG(Quantity),2) AS 'Quantidade Mediana'
+FROM orderdetails
+WHERE ORDERDETAILID LIKE '%2';
+
+-- EX33
+SELECT FORMAT(AVG(Quantity),2) AS 'Quantidade Mediana'
+FROM orderdetails
+WHERE QUANTITY %2=0;
+
+-- EX34
+SELECT FORMAT(AVG(Quantity),2) AS 'Quantidade Mediana'
+FROM orderdetails
+WHERE ORDERID>200;
+
+-- EX35
+SELECT FORMAT(AVG(Quantity),2) AS 'Quantidade Mediana'
+FROM orderdetails
+WHERE PRODUCTID=10;
+
+-- EX36
+SELECT FORMAT(AVG(Quantity),2) AS 'Quantidade Mediana'
+FROM orderdetails
+WHERE ORDERDETAILID BETWEEN 50 AND 100;
+
+-- EX37
+SELECT FORMAT(AVG(Quantity),2) AS 'Quantidade Mediana'
+FROM orderdetails
+WHERE ORDERID LIKE '1%';
+
+-- EX38
+SELECT FORMAT(AVG(Quantity),2) AS 'Quantidade Mediana'
+FROM orderdetails
+WHERE PRODUCTID %5=0;
+
+-- EX39
+SELECT FORMAT(AVG(Quantity),2) AS 'Quantidade Mediana'
+FROM orderdetails
+WHERE QUANTITY NOT IN (5,10,15);
+
+-- EX40
+SELECT FORMAT(AVG(Quantity),2) AS 'Quantidade Mediana'
+FROM orderdetails
+WHERE ORDERDETAILID<10;
+
+-- EX41
+SELECT FORMAT(AVG(Quantity),2) AS 'Quantidade Mediana'
+FROM orderdetails
+WHERE PRODUCTID>20;
+
+-- EX42
+SELECT FORMAT(AVG(Quantity),2) AS 'Quantidade Mediana'
+FROM orderdetails
+WHERE QUANTITY=15;
+
+-- EX43
+SELECT FORMAT(AVG(Quantity),2) AS 'Quantidade Mediana'
+FROM orderdetails
+WHERE ORDERDETAILID IN (10,20,30);
+
+-- EX44
+SELECT FORMAT(AVG(Quantity),2) AS 'Quantidade Mediana'
+FROM orderdetails
+WHERE QUANTITY IN(5,10);
+
+-- EX45
+SELECT FORMAT(AVG(Quantity),2) AS 'Quantidade Mediana'
+FROM orderdetails
+WHERE ORDERID NOT LIKE'%3';
+
+-- EX46
+SELECT FORMAT(AVG(Quantity),2) AS 'Quantidade Mediana'
+FROM orderdetails
+WHERE PRODUCTID>30;
+
+-- EX47
+SELECT FORMAT(AVG(Quantity),2) AS 'Quantidade Mediana'
+FROM orderdetails
+WHERE ORDERID<100;
+
+-- EX48
+SELECT FORMAT(AVG(Quantity),2) AS 'Quantidade Mediana'
+FROM orderdetails
+WHERE PRODUCTID BETWEEN 10 AND 50;
+
+-- EX49
+SELECT FORMAT(AVG(Quantity),2) AS 'Quantidade Mediana'
+FROM orderdetails
+WHERE QUANTITY %4=0;
+
+-- EX50
+SELECT FORMAT(AVG(Quantity),2) AS 'Quantidade Mediana'
+FROM orderdetails
+WHERE ORDERDETAILID LIKE '%0';
