@@ -123,14 +123,14 @@ WHERE Quantity < 10;
 
 /* EXERCICIO 26 */
 SELECT ProductID AS 'ID dos Produtos',
-       MIN(Quantity) AS QUANTIDADE
+       MIN(Quantity) AS Quantidade
 FROM OrderDetails
 WHERE ProductID % 2 = 0
 GROUP BY ProductID
 ORDER BY ProductID;
 
 /* EXERCICIO 27 */
-SELECT Quantity AS QUANTIDADE,
+SELECT Quantity AS Quantidade,
        MAX(OrderDetailID) AS 'Detalhe da ordem'
 FROM OrderDetails
 WHERE Quantity % 3 = 0
@@ -138,16 +138,16 @@ GROUP BY Quantity
 ORDER BY Quantity;
 
 /* EXERCICIO 28 */
-SELECT Quantity AS QUANTIDADE,
-       MIN(ProductID) AS 'ID dos produtos',
+SELECT Quantity AS Quantidade,
+       MIN(ProductID) AS 'ID dos produtos'
 FROM OrderDetails
 WHERE Quantity BETWEEN 5 AND 15
 GROUP BY Quantity
 ORDER BY Quantity;
 
 /* EXERCICIO 29 */
-SELECT OrderID AS ORDENS,
-       MAX(Quantity) AS QUANTIDADE
+SELECT OrderID AS Ordens,
+       MAX(Quantity) AS Quantidade
 FROM OrderDetails
 WHERE OrderID BETWEEN 50 AND 100
 GROUP BY OrderID
@@ -162,30 +162,30 @@ GROUP BY ProductID
 ORDER BY ProductID;
 
 /* EXERCICIO 31 */
-SELECT OrderDetailID AS 'ORDENS DETALHADAS',
-       MAX(Quantity) AS QUANTIDADE
+SELECT OrderDetailID AS 'Ordens Detalhadas',
+       MAX(Quantity) AS Quantidade
 FROM OrderDetails
 GROUP BY OrderDetailID
 ORDER BY OrderDetailID;
 
 /* EXERCICIO 32 */
-SELECT OrderID AS ORDENS,
-       MIN(Quantity) AS QUANTIDADE
+SELECT OrderID AS Ordens,
+       MIN(Quantity) AS Quantidade
 FROM OrderDetails
 WHERE OrderID < 20
 GROUP BY OrderID
 ORDER BY OrderID;
 
 /* EXERCICIO 33 */
-SELECT OrderID AS ORDENS,
-       MAX(Quantity) AS QUANTIDADE
+SELECT OrderID AS Ordens,
+       MAX(Quantity) AS Quantidade
 FROM OrderDetails
 WHERE ProductID < 10
 GROUP BY OrderID
 ORDER BY OrderID;
 
 /* EXERCICIO 34 */
-SELECT Quantity AS QUANTIDADE,
+SELECT Quantity AS Quantidade,
        MIN(OrderDetailID) AS 'Detalhe da ordem'
 FROM OrderDetails
 WHERE Quantity > 12
@@ -201,7 +201,7 @@ GROUP BY ProductID
 ORDER BY ProductID;
 
 /* EXERCICIO 36 */
-SELECT OrderID AS ORDENS ,
+SELECT OrderID AS Ordens ,
        MIN(Quantity) AS 'Detalhe da ordem'
 FROM OrderDetails
 WHERE OrderID BETWEEN 10 AND 30
@@ -230,7 +230,7 @@ SELECT MAX(OrderID)AS'Ordem Maxima',
 FROM Orderdetails
 WHERE  Quantity >15
 GROUP BY OrderID,Quantity
-ORDER BY OrderI
+ORDER BY OrderID;
 
 /* EXERCICIO 40*/
 SELECT MAX(OrderDetailID) AS 'Ordem Maxima'
@@ -258,7 +258,7 @@ SELECT MAX(Quantity)AS Quantidade
 FROM Orderdetails
 WHERE  Quantity >20
 GROUP BY Quantity
-ORDER BY Quantity ASC ;
+ORDER BY Quantity ASC;
 
 /* EXERCICIO 44*/
 SELECT MAX(OrderID)AS'Ordem Maxima'
@@ -279,7 +279,7 @@ SELECT MAX(Quantity)AS Quantidade
 FROM Orderdetails
 WHERE  Quantity BETWEEN 7 AND 14
 GROUP BY Quantity
-ORDER BY Quantity ASC ;
+ORDER BY Quantity ASC;
 
 /* EXERCICIO 47*/
 SELECT MAX(OrderID)AS'Ordem Maxima'
@@ -300,7 +300,7 @@ SELECT MAX(Quantity)AS Quantidade
 FROM Orderdetails
 WHERE  Quantity >30
 GROUP BY Quantity
-ORDER BY Quantity ASC ;
+ORDER BY Quantity ASC;
 
 /* EXERCICIO 50*/
 SELECT MAX(OrderID)AS'Ordem Maxima'
