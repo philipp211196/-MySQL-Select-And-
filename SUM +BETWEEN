@@ -1,0 +1,12 @@
+EX 26
+SELECT SUM(Quantity)
+FROM OrderDetails
+WHERE ProductID %2!=0;
+
+EX 27
+
+SELECT SUM(Quantity)
+FROM OrderDetails
+WHERE ProductID >50;
+
+EX 28 
