@@ -188,3 +188,49 @@ WHERE suppliers.Country = 'UK'
 /*18. Encontre o valor total gasto em fretes (ou apenas a contagem de pedidos)
 por fornecedor, agrupando pelo nome do fornecedor e usando joins para
 conectar as tabelas necessárias.*/
+SELECT 
+    Suppliers.SupplierID AS Fornecedores,
+    Suppliers.SupplierName AS NomeDoFornecedor,
+    COUNT( Orders.OrderID) AS TotalPedidos
+FROM Suppliers
+INNER JOIN Products
+    ON Suppliers.SupplierID = Products.SupplierID
+INNER JOIN OrderDetails
+    ON Products.ProductID = OrderDetails.ProductID
+INNER JOIN Orders
+    ON OrderDetails.OrderID = Orders.OrderID
+ GROUP BY 
+    Suppliers.SupplierID,
+    Suppliers.SupplierName;
+    
+    /*19.Mostre o nome do produto, o nome da categoria (assuma a lógica de ID) e o
+nome do fornecedor, onde o preço do produto é superior à média de preços
+de todos os produtos..*/
+SELECT  Suppliers.SupplierName AS NomedosFornecedores,
+       Products.ProductName AS Nomedosprodutos,
+        Categories.CategoryName AS NomedaCategoria
+FROM  Products
+INNER JOIN Suppliers
+ON  Suppliers.SupplierID =  Products.SupplierID
+INNER JOIN Categories
+ON  Categories.CategoryID = Products.CategoryID
+WHERE Products.Price > (SELECT AVG(Price) from Products);
+
+/*20. Desafio Final: Liste todos os pedidos, o nome do fornecedor de cada
+produto contido no pedido e o nome da transportadora. (Nota: Esta
+consulta exige uma visão clara de como as tabelas Orders e Products se
+conectam através de uma tabela intermediária de itens, caso ela exista, ou
+uma lógica de join direto se o schema for simplificado)..*/
+SELECT orders.OrderID as Ordens,
+       Suppliers.SupplierName as NomedoFornecedor,
+       	Shippers.ShipperName as NomedaTransportadora,
+        Products.ProductName AS NomedoProduto
+FROM Products
+Join Suppliers
+ON Suppliers.SupplierID = Products.SupplierID
+JOIN OrderDetails
+ON OrderDetails.ProductID = Products.ProductID 
+join Orders
+ON Orders.orderID = OrderDetails.orderID
+Join Shippers
+on Shippers.shipperID= Orders.shipperid;
