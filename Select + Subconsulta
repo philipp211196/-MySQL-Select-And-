@@ -1,0 +1,238 @@
+/*15. (Subquery correlacionada, GROUP BY, COUNT): Liste as categorias
+(CategoryName) e conte os produtos, mas considere apenas produtos cujo
+preço é superior à média de preço da sua própria categoria (subquery
+correlacionada no WHERE). */
+SELECT c.CategoryName as NomedaCategoria,
+       COUNT(*) AS TotalProdutos
+FROM Products p
+JOIN Categories c ON p.CategoryID = c.CategoryID
+WHERE p.Price > (
+    SELECT AVG(p2.Price)
+    FROM Products p2
+    WHERE p2.CategoryID = p.CategoryID
+)
+GROUP BY c.CategoryName;
+
+/*16. (Subquery no WHERE com EXISTS, GROUP BY, COUNT): Agrupe os
+transportadores (ShipperID) na tabela Orders e conte as encomendas. Use
+EXISTS com uma subquery para considerar apenas encomendas feitas no
+ano de 1996. */
+SELECT ShipperID, COUNT(*) AS TotalEncomendas
+FROM Orders
+GROUP BY ShipperID
+HAVING EXISTS (
+    SELECT 1
+    FROM Orders o2
+    WHERE YEAR(o2.OrderDate) = 1996
+);
+
+/*17. (Subquery no WHERE, GROUP BY, COUNT, LIMIT): Conte o número de
+produtos oferecidos por cada fornecedor (SupplierID). Filtre apenas os
+fornecedores que estão em países onde também existem clientes
+(subquery em Customers). Limite a 10.*/
+SELECT SupplierID, COUNT(*) AS TotalProdutos
+FROM Products
+WHERE SupplierID IN (
+    SELECT SupplierID
+    FROM Suppliers
+    WHERE Country IN (
+        SELECT DISTINCT Country
+        FROM Customers
+    )
+)
+GROUP BY SupplierID
+LIMIT 10;
+
+/*18. (Subquery no SELECT, GROUP BY): Agrupe os clientes por país e exiba o
+país, seguido de uma subquery no SELECT que conte o número total de
+encomendas (Orders) originadas desse país.*/
+SELECT 
+    c.Country AS Pais,
+    COUNT(DISTINCT c.CustomerID) AS TotalClientes,
+    (
+        SELECT COUNT(*)
+        FROM Orders o
+        JOIN Customers c2 ON o.CustomerID = c2.CustomerID
+        WHERE c2.Country = c.Country
+    ) AS TotalEncomendas
+FROM Customers c
+GROUP BY c.Country;
+
+/*19. (Subquery com IN, GROUP BY, Cálculos, LIMIT): Calcule a soma da
+quantidade (Quantity) vendida por ProductID. Inclua apenas produtos cujo
+preço seja superior a 20 euros (via subquery em Products). Limite aos 5
+produtos mais vendidos.*/
+SELECT ProductID AS IDdoProduto,
+       SUM(Quantity) AS TotalVendidos
+FROM OrderDetails
+WHERE ProductID IN (
+    SELECT ProductID
+    FROM Products
+    WHERE Price > 20
+)
+GROUP BY ProductID
+ORDER BY TotalVendidos DESC
+LIMIT 5;
+
+/*20. (Subquery no FROM, GROUP BY, COUNT): Faça uma subquery que
+selecione os clientes que fizeram mais de 3 encomendas. Na consulta
+principal, conte de quais cidades vêm esses clientes "VIP".*/
+SELECT c.City,
+       COUNT(*) AS TotalClientesVIP
+FROM (
+    SELECT CustomerID, City
+    FROM Customers
+    WHERE CustomerID IN (
+        SELECT CustomerID
+        FROM Orders
+        GROUP BY CustomerID
+        HAVING COUNT(*) > 3
+    )
+) c
+GROUP BY c.City;
+
+/*Bloco 3: Filtros Avançados pós-Agrupamento (HAVING e SUBQUERY)
+A dificuldade aumenta: a subconsulta é utilizada dentro da cláusula HAVING para
+validar agregações dinâmicas.
+
+21. (GROUP BY, HAVING com Subquery, COUNT): Agrupe as encomendas por
+EmployeeID e conte-as. Mostre apenas os funcionários cuja contagem de
+encomendas seja superior à média de encomendas processadas por todos
+os funcionários (subquery no HAVING).*/
+SELECT EmployeeID,
+       COUNT(*) AS TotalEncomendas
+FROM Orders
+GROUP BY EmployeeID
+HAVING COUNT(*) > (
+    SELECT AVG(NumEncomendas)
+    FROM (
+        SELECT COUNT(*) AS NumEncomendas
+        FROM Orders
+        GROUP BY EmployeeID
+    ) t
+);
+
+/*22. (GROUP BY, HAVING com Subquery, CONCAT): Agrupe os produtos por
+CategoryID e concatene os nomes das categorias. Use HAVING para
+mostrar apenas categorias onde o preço médio dos produtos é maior que o
+preço médio do sistema inteiro.).*/
+SELECT CategoryID,
+       GROUP_CONCAT(ProductName) AS Produtos
+FROM Products
+GROUP BY CategoryID
+HAVING AVG(Price) > (
+    SELECT AVG(Price)
+    FROM Products
+);
+
+/*23. (GROUP BY, HAVING com Subquery, COUNT): Conte os clientes por país.
+Exiba apenas os países (HAVING) onde a quantidade de clientes é igual ao
+número de clientes que vivem no 'USA' (obtenha este número via
+subquery).*/
+SELECT Country,
+       COUNT(*) AS TotalClientes
+FROM Customers
+GROUP BY Country
+HAVING COUNT(*) = (
+    SELECT COUNT(*)
+    FROM Customers
+    WHERE Country = 'USA'
+);
+
+/*24. (GROUP BY, HAVING com Subquery, Cálculos): Agrupe OrderDetails por
+OrderID e calcule a quantidade total. Mostre apenas as encomendas cuja
+quantidade total é superior à quantidade máxima faturada numa única
+linha de OrderDetails de todo o histórico.*/
+SELECT OrderID,
+       SUM(Quantity) AS TotalQuantidade
+FROM OrderDetails
+GROUP BY OrderID
+HAVING SUM(Quantity) > (
+    SELECT MAX(QuantidadeLinha)
+    FROM (
+        SELECT Quantity AS QuantidadeLinha
+        FROM OrderDetails
+    ) t
+);
+
+/*25. (GROUP BY, HAVING com Subquery com ALL): Agrupe os produtos por
+fornecedor e conte-os. Use HAVING para mostrar apenas os fornecedores
+cuja contagem de produtos seja superior à contagem de produtos de
+TODOS os fornecedores do país 'UK' (subquery com ALL).*/
+SELECT SupplierID,
+       COUNT(*) AS TotalProdutos
+FROM Products
+GROUP BY SupplierID
+HAVING COUNT(*) > ALL (
+    SELECT COUNT(*)
+    FROM Products p
+    JOIN Suppliers s ON p.SupplierID = s.SupplierID
+    WHERE s.Country = 'UK'
+    GROUP BY p.SupplierID
+);
+
+/* 26. (GROUP BY, HAVING com Subquery, COUNT, LIMIT): Agrupe as
+encomendas pelo CustomerID e conte-as. Mostre apenas os clientes que
+encomendaram mais vezes do que o cliente com ID 1. Limite a 5
+resultados. */
+SELECT CustomerID, COUNT(*) AS TOTALENCOMENDAS
+FROM orders 
+GROUP BY CustomerID
+HAVING COUNT(*) > (
+    SELECT COUNT(*)
+    FROM Orders 
+    WHERE customerID =1 
+)
+limit 5;
+
+/*27. (GROUP BY, HAVING com Subquery, Cálculos): Agrupe os produtos pela
+sua categoria e calcule o preço máximo em cada uma. Mostre apenas as
+categorias cujo preço máximo seja inferior a 100 euros (validação via
+subquery no HAVING, em vez de WHERE). */
+SELECT CategoryID as categoria, MAX(price) as PrecoMaximo 
+FROM Products
+GROUP BY CategoryID
+HAVING MAX(price) <(
+    SELECT MAX(price)
+    FROM Products 
+    WHERE Price < 100 
+);
+
+/*28. (GROUP BY, COUNT, HAVING com EXISTS): Conte as encomendas por
+EmployeeID. Mostre o resultado apenas se existir (via subquery EXISTS no
+HAVING) alguma encomenda no sistema registada na data '1996-07-04'.*/
+SELECT EmployeeID as IDdasEncomendas, COUNT(*) AS TotalEncomendas
+FROM Orders
+GROUP BY EmployeeID
+HAVING EXISTS (
+    SELECT 1
+    FROM Orders 
+    WHERE OrderDate = '1996-07-04'
+);
+
+/*29. (GROUP BY, HAVING com Subquery, Cálculos): Calcule a soma da
+quantidade em OrderDetails agrupada por ProductID. Exiba apenas os
+produtos cuja soma de vendas seja superior à soma de vendas do produto
+'Tofu' (obtenha o ID e a soma via subquery).*/
+SELECT ProductID AS IdDoProduto,
+ SUM(Quantity) AS Quantidade
+FROM OrderDetails
+GROUP BY ProductID
+HAVING ProductID = (
+    SELECT ProductID
+    FROM Products
+    WHERE ProductName = 'tofu'
+);
+
+/*30. (GROUP BY, HAVING com Subquery escalar cruzada): Conte os
+fornecedores por cidade. Mostre apenas as cidades cuja contagem seja
+exatamente igual ao número total de transportadoras (Shippers) registadas
+no banco (subquery simples no HAVING).*/
+SELECT City AS Cidade,
+	   COUNT(*) AS TOTALFORNECEDORES 
+FROM Suppliers
+GROUP BY CITY
+HAVING COUNT(*) =(
+    SELECT COUNT(*)
+    FROM Shippers);
+    
