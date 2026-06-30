@@ -1,0 +1,62 @@
+DROP PROCEDURE IF EXISTS sp_PedidosdeClientes ;
+DELIMITER //
+CREATE PROCEDURE sp_PedidosdeClientes()
+BEGIN
+    SELECT
+        COUNT(o.CustomerID) AS QuantidadeDePedidos,
+        c.ContactName AS NomedoCliente
+    FROM Customers c 
+    JOIN orders o
+        ON o.CustomerID = c.CustomerID
+    GROUP BY c.CustomerID, c.ContactName
+    ORDER BY QuantidadeDePedidos DESC;
+END //
+DELIMITER ;
+CALL sp_PedidosdeClientes();
+
+
+DROP PROCEDURE IF EXISTS sp_NomeDeProdutos;
+DELIMITER //
+CREATE PROCEDURE sp_NomeDeProdutos()
+BEGIN
+    SELECT
+        c.CategoryID AS CategoriaDoProduto,
+        p.ProductName AS NomedoProduto,
+        	CategoryName as NomedaCategoria,
+            Description as descriçao 
+    FROM Products p
+    JOIN Categories c
+        ON p.CategoryID = c.CategoryID
+    GROUP BY c.CategoryID, p.ProductName
+    ORDER BY c.CategoryID;
+END //
+DELIMITER ;
+CALL sp_NomeDeProdutos();
+
+
+
+DROP PROCEDURE IF EXISTS sp_TrabalhoDeFuncionarios ;
+DELIMITER //
+CREATE PROCEDURE sp_TrabalhoDeFuncionarios()
+BEGIN
+    SELECT
+        COUNT(o.EmployeeID) AS QuantidadeDePedidos,
+        CONCAT(e.FirstName,' ',e.LastName) AS NomedoFuncinario,
+         max(o.OrderDate)AS DataDosPedidos,
+        (SELECT c.ContactName
+                 FROM orders o
+    JOIN customers c
+        ON o.CustomerID = c.CustomerID
+    WHERE o.EmployeeID = e.EmployeeID 
+    ORDER BY  c.ContactName DESC
+    LIMIT 1) as UltimoCliente
+	FROM Employees e
+    JOIN orders o
+        ON o.EmployeeID = e.EmployeeID
+    GROUP BY e.EmployeeID, o.EmployeeID
+    ORDER BY QuantidadeDePedidos DESC;
+END //
+DELIMITER ;
+CALL sp_TrabalhoDeFuncionarios();
+
+
